@@ -1,0 +1,63 @@
+
+.header-div {
+  display: grid;
+  grid-template-columns: 30% 30% 20% 20%;
+  background-color: black;
+  height: 10vh;
+}
+.main-logo-wrapper {
+  margin: auto;
+}
+.main-logo {
+  max-height: 8vh;
+  width: auto;
+}
+.search-bar-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-bar {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: black;
+  border: #FF8055 solid 3px;
+  border-radius: 30px;
+  height: 5vh;
+  width: 80%;
+  color: #FF8055;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}
+.notification-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notification-section img {
+  height: 5vh;
+  margin-right: 15px;
+}
+.notification-section img:nth-child(2) {
+  height: 4vh;
+  margin-left: 15px;
+}
+.account-section {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.user-details {
+  margin-right: 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+.user-image {
+  height: 9vh;
+  width: 9vh;
+  margin-right: 5px;
+}
+.user-image img {
+  height: 9vh;
+}
