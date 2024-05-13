@@ -1,0 +1,70 @@
+
+.feed-grid-container {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  justify-content: space-evenly;
+  /* height: 10vh; */
+  gap: 10px;
+  margin: 10px;
+}
+
+.feed-post {
+  /* max-height: 100px;
+  max-width: 100px; */
+  margin-bottom: 20px;
+  /* background-color: brown; */
+}
+.feed-post img {
+  width: 100%;
+}
+.post-description-section {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: -25px;
+  height: 25%;
+  width: 100%;
+  scale: 1.08;
+  border-radius: 25px;
+}
+.post-description-header {
+  height: 80%;
+  display: flex;
+}
+.post-description-footer {
+  height: 20%;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-size: 16;
+  color: #454343;
+}
+.main-description {
+  width: 85%;
+  padding: 10px;
+  font-family: "Inter", sans-serif;
+}
+.post-main-title {
+  font-size: 23px;
+  font-weight: 700;
+}
+.post-user-handle {
+  font-size: 23px;
+  font-weight: 500;
+}
+.upvote-section {
+  width: 15%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 16;
+  color: #454343;
+}
+.upvote-section img {
+  margin: 5px;
+}

@@ -1,0 +1,21 @@
+<div class="header-div">
+	<div class="main-logo-wrapper">
+		<img class="main-logo" src="../../imgs/StorysphereLogo.svg" alt="StorysphereLogo">
+	</div>
+	<div class="search-bar-section">
+    <input class="search-bar" type="text" spellcheck="false" placeholder="Mrs Dalloway">
+	</div>
+	<div class="notification-section">
+		<img src="../../imgs/NotificationsIcon.svg" alt="NotificationsIcon">
+		<img src="../../imgs/InboxIcon.svg" alt="InboxIcon">
+	</div>
+	<div class="account-section">
+			<div class="user-details">
+				<b><%= first_name %> <%= last_name %></b><br>
+				@<%= user_handle %>
+			</div>
+			<div class="user-image">
+				<img src="<%= image_url %>" alt="UserImage">
+			</div>
+	</div>
+</div>

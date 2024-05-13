@@ -1,0 +1,25 @@
+<div class="feed-div">
+	<div class="feed-grid-container">
+		<% _.each(posts, function(post){ %>
+			<div class="feed-post">
+				<img src="<%= post['image_url'] %>" alt="BookCover">
+				<div class="post-description-section">
+					<div class="post-description-header">
+						<div class="main-description">
+							<span class="post-main-title"><%= post["content"] %></span><br>
+							<span class="post-user-handle">@<%= post["user_handle"] %></span>
+						</div>
+						<div class="upvote-section">
+							<img src="../../imgs/UpvoteIcon.svg" alt="UpvoteIcon">
+							<span><%= post["postUpvotes"].length %></span>
+						</div>
+					</div>
+					<div class="post-description-footer">
+						<span>2 Comments</span>
+						<span><%= post["time_stamp"] %></span>
+					</div>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+</div>
