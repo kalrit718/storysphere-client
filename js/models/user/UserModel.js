@@ -6,7 +6,8 @@ define([
   var UserModel = Backbone.Model.extend({
 
 		initialize: function( options ) {
-			this.user_handle = options.user_handle; 
+			this.custom_options = options;
+			this.user_handle = options.user_handle;
 		},
 
   	defaults : {
@@ -19,7 +20,14 @@ define([
 		
 		urlRoot: function() {
 			that = this;
-			return 'http://localhost/storysphere-server/Users?user_handle=' + that.user_handle;
+
+			if(that.custom_options.authenticate) {
+				return `http://localhost/storysphere-server/Auth/authenticate?user_handle=${that.custom_options.user_handle}&password=${that.custom_options.password}`;
+			}
+			else if(that.custom_options.get_user) {
+				return 'http://localhost/storysphere-server/Users?user_handle=' + that.user_handle;
+			}
+			return 'http://localhost/storysphere-server/Users';
 		},
   });
 

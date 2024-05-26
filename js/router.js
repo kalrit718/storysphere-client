@@ -3,13 +3,15 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'views/login/LoginView',
   'views/header/HeaderView',
   'views/feed/FeedView',
-], function($, _, Backbone, HeaderView, FeedView) {
+], function($, _, Backbone, LoginView, HeaderView, FeedView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Define some URL routes
+      'login': 'showLogin',
       'home': 'showHome',
       
       // Default
@@ -21,15 +23,20 @@ define([
 
     var app_router = new AppRouter;
 
+    app_router.on('route:showLogin', function(){
+   
+      var loginView = new LoginView();
+      loginView.render();
+    });
+
     app_router.on('route:showHome', function(){
    
       var headerView = new HeaderView();
-       headerView.render();
-
-       var feedView = new FeedView();
-       feedView.render();
-
-  });
+      headerView.render();
+      
+      var feedView = new FeedView();
+      feedView.render();
+    });
 
     app_router.on('route:defaultAction', function (actions) {
      

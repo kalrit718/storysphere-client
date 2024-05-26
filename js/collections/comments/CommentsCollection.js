@@ -1,17 +1,17 @@
 define([
   'underscore',
   'backbone',
-  'models/feedpost/FeedPostModel'
-], function(_, Backbone, FeedPostModel){
+  'models/comment/CommentModel'
+], function(_, Backbone, CommentModel){
 
-  var FeedPosts = Backbone.Collection.extend({
+  var Comments = Backbone.Collection.extend({
 
-    model: FeedPostModel,
+    model: CommentModel,
     
     initialize : function(models, options) {},
     
     url : function() {
-      return 'http://localhost/storysphere-server/Posts/All';
+      return 'http://localhost/storysphere-server/Comments/All';
     },
     
     parse : function(data) {
@@ -20,5 +20,5 @@ define([
     }
   });
 
-  return FeedPosts;
+  return Comments;
 });

@@ -10,10 +10,12 @@ define([
 		},
 
   	defaults : {
+			post_id : '',
   		user_handle : '',
+  		title : '',
   		content : '',
   		image_url : '',
-  		timestamp : ''
+  		time_stamp : ''
   	},
   });
 

@@ -3,8 +3,9 @@ define([
   'underscore',
   'backbone',
   'models/user/UserModel',
-  'text!templates/header/headerTemplate.html'
-], function($, _, Backbone, UserModel, headerTemplate){
+  'text!templates/header/headerTemplate.html',
+  'services/auth/AuthService'
+], function($, _, Backbone, UserModel, headerTemplate, AuthService){
 
   var HeaderView = Backbone.View.extend({
     el: $("header"),
@@ -17,12 +18,19 @@ define([
 
     render: function(){
       var that = this;
-      var options = {user_handle: 'its_ack'}
+      let userData = AuthService.getUser();
+      var options = {
+        get_user: true,
+        user_handle: userData.user_handle
+      };
       user = new UserModel(options);
       var data = {};
       user.fetch({
-        success: function(user, response) {
-          data = user.toJSON();
+        headers: {
+          "Authorization": `Bearer ${userData.auth_token}`
+        },
+        success: function(userData, response) {
+          data = userData.toJSON();
           console.log(data);
           return data;
         },
