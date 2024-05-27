@@ -1,22 +1,64 @@
 <div class="feed-div">
 	<div class="feed-grid-container">
 		<% _.each(posts, function(post){ %>
-			<div class="feed-post">
-				<img src="<%= post['image_url'] %>" alt="BookCover">
-				<div class="post-description-section">
-					<div class="post-description-header">
-						<div class="main-description">
-							<span class="post-main-title"><%= post["content"] %></span><br>
-							<span class="post-user-handle">@<%= post["user_handle"] %></span>
+			<div id="feed-post-<%= post['post_id'] %>" class="feed-post">
+				<div id="feed-post-<%= post['post_id'] %>-inner-shell" class="feed-post-inner-shell">
+					<img src="<%= post['image_url'] %>" alt="BookCover">
+					<div class="post-description-section">
+						<div class="post-description-header">
+							<div class="main-description">
+								<span class="post-main-title"><%= post["title"] %></span><br>
+								<span class="post-user-handle">@<%= post["user_handle"] %></span>
+							</div>
+							<div class="upvote-section">
+								<img src="../../imgs/UpvoteIcon.svg" alt="UpvoteIcon">
+								<span><%= post["post_upvotes"].length %></span>
+							</div>
 						</div>
-						<div class="upvote-section">
-							<img src="../../imgs/UpvoteIcon.svg" alt="UpvoteIcon">
-							<span><%= post["postUpvotes"].length %></span>
+						<div class="post-description-footer">
+							<span><%= post["comments"].length %> Comments</span>
+							<span><%= post["time_stamp"] %></span>
 						</div>
 					</div>
-					<div class="post-description-footer">
-						<span>2 Comments</span>
-						<span><%= post["time_stamp"] %></span>
+					<div id="enlarged-post-section-<%= post['post_id'] %>" class="enlarged-post-section">
+						<div id="enlarged-post-<%= post['post_id'] %>-close-button" class="enlarged-post-close-button">X</div>
+						<div class="el-image-wrapper">
+							<img class=".el-image" src="<%= post['image_url'] %>" alt="BookCover">
+						</div>
+						<div class="el-post-description-section">
+							<div class="post-description-header">
+								<div class="main-description">
+									<span class="post-main-title"><%= post["title"] %></span><br>
+									<span class="post-user-handle">@<%= post["user_handle"] %></span><br><br>
+									<span class="el-post-description-text"><%= post["content"] %></span>
+								</div>
+								<div class="el-upvote-section">
+									<img class="el-upvote-image" src="../../imgs/UpvoteIcon.svg" alt="UpvoteIcon">
+									<span><%= post["post_upvotes"].length %></span>
+								</div>
+							</div>
+							<div class="post-description-footer">
+								<span class="el-post-description-footer-comments-span">Comments</span>
+								<span><%= post["time_stamp"] %></span>
+							</div>
+							<div class="el-post-description-comments">
+								<% _.each(post["comments"], function(comment){ %>
+									<div class="post-comment-block">
+										<div class="post-comment-profile-pic">
+											<img src="https://www.shutterstock.com/image-vector/default-avatar-profile-icon-social-600nw-1677509740.jpg" alt="CommentProfilePic">
+										</div>
+										<div class="post-comment-body-section">
+											<span class="post-comment-user-handle">@<%= comment["user_handle"] %></span>
+											<span><%= comment["comment_body"] %></span>
+										</div>
+										<div class="post-comment-upvote-section">
+											<img id="post-comment-upvote-image-<%= comment['comment_id'] %>" class="post-comment-upvote-image" src="../../imgs/UpvoteIcon.svg" alt="UpvoteIcon">
+											<span>18</span>
+										</div>
+									</div>
+								<% }); %>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

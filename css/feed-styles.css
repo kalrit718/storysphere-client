@@ -3,16 +3,17 @@
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
   justify-content: space-evenly;
-  /* height: 10vh; */
   gap: 10px;
   margin: 10px;
 }
 
 .feed-post {
-  /* max-height: 100px;
-  max-width: 100px; */
   margin-bottom: 20px;
-  /* background-color: brown; */
+  cursor: pointer;
+}
+.feed-post-inner-shell {
+  width: 100%;
+  height: 100%;
 }
 .feed-post img {
   width: 100%;
@@ -67,4 +68,113 @@
 }
 .upvote-section img {
   margin: 5px;
+}
+.enlarged-post-section {
+  visibility: hidden;
+  cursor: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.enlarged-post-close-button {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  width: 100px;
+  height: 100px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.enlarged-post-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.el-image-wrapper {
+  width: 50%;
+}
+.el-post-description-section {
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 50%;
+  border-radius: 25px;
+  padding: 10px;
+}
+.el-post-description-text {
+  font-size: 18px;
+}
+.el-upvote-section {
+  width: 7%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: #454343;
+}
+.el-upvote-image {
+  cursor: pointer;
+}
+.el-post-description-footer-comments-span {
+  font-size: 20px;
+}
+.el-post-description-comments {
+  padding: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+.post-comment-block {
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+.post-comment-profile-pic {
+  width: 10%;
+}
+.post-comment-profile-pic img {
+  width: 80%;
+}
+.post-comment-body-section {
+  width: 80%;
+}
+.post-comment-body-section {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+}
+.post-comment-body-section span {
+  margin-top: 5px;
+}
+.post-comment-user-handle {
+  font-weight: 600;
+}
+.post-comment-upvote-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+}
+.post-comment-upvote-section img {
+  width: 40%;
+}
+.post-comment-upvote-image {
+  cursor: pointer;
 }
